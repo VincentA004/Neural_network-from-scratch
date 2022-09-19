@@ -33,7 +33,7 @@ class NeuralNetwork:
             current_input_vector = self.forward_cache_vector[-1]
             w = np.dot(self.weight_matrix[layer_index],current_input_vector) 
             z = w+self.bias_matrix[layer_index]
-            if layer_index == 3:
+            if layer_index == number_of_layers - 1:
                 output_vector = self.softmax(z)
             else:
                 output_vector = self.activation_reLU_forward(z)
