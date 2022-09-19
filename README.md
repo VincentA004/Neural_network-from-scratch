@@ -11,7 +11,7 @@ This program classifies pictures of digits and displays the correct digit based 
 
 ## Data
 This program uses the MNIST data set\
-link to MNIST data set: http://yann.lecun.com/exdb/mnist/
+Link to MNIST data set: http://yann.lecun.com/exdb/mnist/
 
 
 ## Technologies used
