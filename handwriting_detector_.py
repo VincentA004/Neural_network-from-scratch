@@ -1,5 +1,6 @@
 import time
 import NN
+import os
 
 
 
@@ -21,17 +22,20 @@ def main():
         if(option == 1):
             train_and_test(config_array,learning_rate,epochs)
         elif(option==2):
+            os.system('cls')
             learning_rate = float(input("Enter learning rate: "))
             epochs = int(input("Enter epochs: "))
             print('hyper_parameters changed, retrain network to see results')
-            time.sleep(2)
-        elif(option == 3 ):
+            time.sleep(1.5)
+        elif(option == 3):
+            os.system('cls')
             print('\nResetting hyper_parameters to default values')
             config_array = default_config_array
             learning_rate = default_learning_rate
             epochs = default_epochs
             time.sleep(1.5) 
         else:
+            os.system('cls')
             check = False
     
         
@@ -57,6 +61,7 @@ def initialize_neural_network(config_array, lr):
     return neural_network
            
 def train_and_test(config_array,lr,epochs):
+    os.system('cls')
     print('\nInitializing neural network...\n')
     neural_network = initialize_neural_network(config_array, lr)
     print('Preprocessing image...\n')
@@ -68,6 +73,8 @@ def train_and_test(config_array,lr,epochs):
     c,w = neural_network.evaluate_multiple(X_train, y_train)
     t2 = time.time()
     accuracy = (c / (c + w))*100
+    time.sleep(1)
+    os.system('cls')
     print("\n Training data summary stats: ")
     print(f'training accuracy: {accuracy}%')
     print(f'total training time: {t1-t0}')
@@ -80,8 +87,10 @@ def train_and_test(config_array,lr,epochs):
         print('3. quit testing: ')
         test_option = int(input())
         if test_option == 1:
+            os.system('cls')
             neural_network.run_test(X_test, y_test)
         elif test_option == 2:
+            os.system('cls')
             t1 = time.time()
             c,w = neural_network.evaluate_multiple(X_test, y_test)
             t2 = time.time()
@@ -90,6 +99,7 @@ def train_and_test(config_array,lr,epochs):
             print(f'testing accuracy: {accuracy}%')
             print(f'total evaluation time: {t2-t1}')
         else:
+            os.system('cls')
             pass
             
             
