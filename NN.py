@@ -145,12 +145,12 @@ class NeuralNetwork:
             result = f'The digit predicted: {ans_max}: \u274c'
         return result,i
     
-    def run_test(self,data,label):
+     def run_test(self,data,label):
         result, i = self.evaluate_single(data, label)
-        print(result)
         img = data[i].reshape((28,28))
         plt.imshow(img, cmap="Greys")
         print(plt.show())
+        print(result)
         
                
 
